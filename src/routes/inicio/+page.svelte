@@ -16,7 +16,7 @@
 
   <div class="row mt-4">
     <div class="col-md-4">
-      <i class="bi bi-mountain bi-3x"></i>
+      <i class="bi bi-tree-fill bi-3x"></i>
       <h3>Bicicletas de Montaña</h3>
       <p>
         Explora terrenos difíciles con nuestras resistentes bicicletas de
@@ -29,14 +29,14 @@
       <p>Velocidad y rendimiento para los amantes del asfalto.</p>
     </div>
     <div class="col-md-4">
-      <i class="bi bi-person bi-3x"></i>
+      <i class="bi bi-people-fill bi-3x"></i>
       <h3>Bicicletas Infantiles</h3>
       <p>Seguras y divertidas para los más pequeños.</p>
     </div>
   </div>
 
   <div class="mt-5">
-    <h2><i class="bi bi-people"></i> Testimonios de Clientes</h2>
+    <h2><i class="bi bi-clipboard-check-fill"></i> Testimonios de Clientes</h2>
     <p>Lo que dicen nuestros clientes sobre nosotros.</p>
     <blockquote>
       "¡La mejor tienda de bicicletas! Gran variedad y excelente servicio." –
@@ -71,8 +71,8 @@
           data-bs-parent="#faqAccordion"
         >
           <div class="accordion-body">
-            Sí, realizamos envíos a todo el país con tiempos de entrega rápidos y
-            seguros.
+            Sí, realizamos envíos a todo el país con tiempos de entrega rápidos
+            y seguros.
           </div>
         </div>
       </div>
@@ -96,8 +96,8 @@
           data-bs-parent="#faqAccordion"
         >
           <div class="accordion-body">
-            Sí, ofrecemos mantenimiento preventivo y correctivo para todo tipo de
-            bicicletas.
+            Sí, ofrecemos mantenimiento preventivo y correctivo para todo tipo
+            de bicicletas.
           </div>
         </div>
       </div>

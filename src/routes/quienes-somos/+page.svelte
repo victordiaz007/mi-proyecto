@@ -15,39 +15,48 @@
 
   <section class="row mt-5">
     <div class="col-md-6">
-      <h2><i class="bi bi-bicycle"></i> Nuestra Historia</h2>
-      <p>
-        Desde nuestros inicios, nos hemos dedicado a proporcionar bicicletas de
-        alta calidad para ciclistas de todos los niveles. Nos enorgullecemos de
-        nuestra atención al detalle y nuestra pasión por el ciclismo.
-      </p>
+      <div class="CardSelected p-4 border border-black rounded">
+        <h2><i class="bi bi-bicycle"></i> Nuestra Historia</h2>
+        <p>
+          Desde nuestros inicios, nos hemos dedicado a proporcionar bicicletas
+          de alta calidad para ciclistas de todos los niveles. Nos
+          enorgullecemos de nuestra atención al detalle y nuestra pasión por el
+          ciclismo.
+        </p>
+      </div>
     </div>
     <div class="col-md-6">
-      <h2><i class="bi bi-people"></i> Nuestra Misión</h2>
-      <p>
-        Queremos fomentar el amor por el ciclismo y ofrecer productos que
-        mejoren la experiencia de nuestros clientes, promoviendo un estilo de
-        vida activo y sostenible.
-      </p>
+      <div class="CardSelected p-4 border border-black rounded">
+        <h2><i class="bi bi-people"></i> Nuestra Misión</h2>
+        <p>
+          Queremos fomentar el amor por el ciclismo y ofrecer productos que
+          mejoren la experiencia de nuestros clientes, promoviendo un estilo de
+          vida activo y sostenible.
+        </p>
+      </div>
     </div>
   </section>
 
   <section class="row mt-5">
     <div class="col-md-6">
-      <h2><i class="bi bi-tools"></i> Servicios</h2>
-      <ul>
-        <li>Venta de bicicletas y accesorios</li>
-        <li>Mantenimiento y reparación</li>
-        <li>Asesoramiento personalizado</li>
-      </ul>
+      <div class="CardSelected p-4 border border-black rounded">
+        <h2><i class="bi bi-tools"></i> Servicios</h2>
+        <ul>
+          <li>Venta de bicicletas y accesorios</li>
+          <li>Mantenimiento y reparación</li>
+          <li>Asesoramiento personalizado</li>
+        </ul>
+      </div>
     </div>
     <div class="col-md-6">
-      <h2><i class="bi bi-handshake-simple"></i> ¿Por qué elegirnos?</h2>
-      <p>
-        Ofrecemos calidad, experiencia y un servicio al cliente excepcional.
-        Nuestro equipo está aquí para ayudarte a encontrar la bicicleta perfecta
-        para ti.
-      </p>
+      <div class="CardSelected p-4 border border-black rounded">
+        <h2><i class="bi bi-question-circle"></i> ¿Por qué elegirnos?</h2>
+        <p>
+          Ofrecemos calidad, experiencia y un servicio al cliente excepcional.
+          Nuestro equipo está aquí para ayudarte a encontrar la bicicleta
+          perfecta para ti.
+        </p>
+      </div>
     </div>
   </section>
 </main>
@@ -131,8 +140,18 @@
   }
 
   ul li:before {
-    content: '✔';
+    content: "✔";
     color: #4a90e2;
     margin-right: 0.5rem;
+  }
+
+  .CardSelected {
+    transition: all 125ms ease-in;
+  }
+
+  .CardSelected:hover {
+    cursor: pointer;
+    translate: 0px -8px;
+    box-shadow: 5px 5px 16px #555;
   }
 </style>

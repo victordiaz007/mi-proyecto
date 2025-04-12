@@ -1,12 +1,16 @@
 <!-- src/routes/register/+page.svelte -->
 <script lang="ts">
-  import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth';
-  import { auth } from '$lib/firebase';
-  import { goto } from '$app/navigation';
+  import {
+    createUserWithEmailAndPassword,
+    sendEmailVerification,
+    signInWithEmailAndPassword,
+  } from "firebase/auth";
+  import { auth } from "$lib/firebase";
+  import { goto } from "$app/navigation";
 
-  let email: string = '';
-  let password: string = '';
-  let error: string = '';
+  let email: string = "";
+  let password: string = "";
+  let error: string = "";
   let loading: boolean = false;
   let isLogin: boolean = true;
   let showSuccess: boolean = false;
@@ -14,32 +18,40 @@
   async function handleAuth() {
     try {
       loading = true;
-      error = '';
+      error = "";
       showSuccess = false;
 
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
-        goto('/inicio'); // Cambiado de /home a /inicio
+        goto("/inicio"); // Cambiado de /home a /inicio
       } else {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password,
+        );
         const user = userCredential.user;
         await sendEmailVerification(user);
         showSuccess = true;
-        email = '';
-        password = '';
-        error = 'Registro exitoso. Se ha enviado un email de verificación a ' + email + '. Por favor, revisa tu bandeja de entrada.';
+        email = "";
+        password = "";
+        error =
+          "Registro exitoso. Se ha enviado un email de verificación a " +
+          email +
+          ". Por favor, revisa tu bandeja de entrada.";
         setTimeout(() => {
           showSuccess = false;
           isLogin = true;
         }, 5000);
       }
     } catch (err: any) {
-      if (err.code === 'auth/invalid-credential') {
-        error = 'Email o contraseña incorrectos. Por favor, verifica tus credenciales.';
+      if (err.code === "auth/invalid-credential") {
+        error =
+          "Email o contraseña incorrectos. Por favor, verifica tus credenciales.";
       } else {
-        error = err.message || 'Error en la autenticación';
+        error = err.message || "Error en la autenticación";
       }
-      console.error('Firebase Error:', err);
+      console.error("Firebase Error:", err);
       showSuccess = false;
     } finally {
       loading = false;
@@ -48,7 +60,7 @@
 
   function toggleAuthMode() {
     isLogin = !isLogin;
-    error = '';
+    error = "";
     showSuccess = false;
   }
 </script>
@@ -56,7 +68,8 @@
 <main>
   <div class="auth-container">
     <div class="avatar">
-      <i class="bi bi-person-circle" style="font-size: 80px; color: #ffffff;"></i>
+      <i class="bi bi-person-circle" style="font-size: 80px; color: #ffffff;"
+      ></i>
     </div>
     <h2>Bienvenido a <span class="highlight">BiciKingV</span></h2>
     <form on:submit|preventDefault={handleAuth}>
@@ -85,17 +98,29 @@
         <p class="success">{error}</p>
       {/if}
       <button type="submit" disabled={loading}>
-        {loading ? (isLogin ? 'Iniciando...' : 'Registrando...') : (isLogin ? 'Iniciar Sesión' : 'Registrarse')}
+        {loading
+          ? isLogin
+            ? "Iniciando..."
+            : "Registrando..."
+          : isLogin
+            ? "Iniciar Sesión"
+            : "Registrarse"}
       </button>
-      <p class="toggle" on:click|preventDefault={toggleAuthMode}>
-        {isLogin ? '¿No tienes cuenta? Regístrate' : '¿Ya tienes cuenta? Inicia sesión'}
-      </p>
+      <button
+        class="toggle"
+        id="buttonLogin"
+        on:click|preventDefault={toggleAuthMode}
+      >
+        {isLogin
+          ? "¿No tienes cuenta? Regístrate"
+          : "¿Ya tienes cuenta? Inicia sesión"}
+      </button>
     </form>
   </div>
 </main>
 
 <style>
-  @import 'bootstrap-icons/font/bootstrap-icons.css';
+  @import "bootstrap-icons/font/bootstrap-icons.css";
 
   :global(body) {
     margin: 0;
@@ -201,5 +226,16 @@
 
   .toggle:hover {
     color: #131314 !important;
+  }
+
+  #buttonLogin {
+    border: 0;
+    color: #fff;
+    transition: all 125ms ease-in;
+  }
+
+  #buttonLogin:hover {
+    color: #00ff00;
+    background-color: transparent;
   }
 </style>
