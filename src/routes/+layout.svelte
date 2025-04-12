@@ -1,14 +1,14 @@
 <!-- src/routes/+layout.svelte -->
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { auth } from '$lib/firebase';
-  import { goto } from '$app/navigation';
-  import { page } from '$app/stores';
-  import { onAuthStateChanged } from 'firebase/auth';
+  import { onMount } from "svelte";
+  import { auth } from "$lib/firebase";
+  import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
+  import { onAuthStateChanged } from "firebase/auth";
 
   // Importar el JavaScript de Bootstrap
   onMount(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js');
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
   });
 
   let user: any = null;
@@ -21,15 +21,15 @@
       loading = false;
 
       if (currentUser) {
-        isAdmin = currentUser.email === 'admin@example.com'; // Cambia esto por tu email de admin
+        isAdmin = currentUser.email === "admin@example.com"; // Cambia esto por tu email de admin
       } else {
         isAdmin = false;
       }
 
-      if (!currentUser && $page.url.pathname !== '/register') {
-        goto('/register');
-      } else if (currentUser && $page.url.pathname === '/register') {
-        goto('/inicio');
+      if (!currentUser && $page.url.pathname !== "/register") {
+        goto("/register");
+      } else if (currentUser && $page.url.pathname === "/register") {
+        goto("/inicio");
       }
     });
   });
@@ -37,7 +37,7 @@
   async function handleLogout() {
     await auth.signOut();
     user = null;
-    goto('/register');
+    goto("/register");
   }
 </script>
 
@@ -54,7 +54,7 @@
 {#if loading}
   <div>Cargando...</div>
 {:else}
-  {#if user && $page.url.pathname !== '/register'}
+  {#if user && $page.url.pathname !== "/register"}
     <nav class="navbar">
       <div class="navbar-brand">
         <a href="/inicio">BiciKingV</a>
@@ -77,7 +77,7 @@
     </nav>
   {/if}
   <slot />
-  {#if user && $page.url.pathname !== '/register'}
+  {#if user && $page.url.pathname !== "/register"}
     <footer class="bg-dark text-info py-4 mt-5">
       <div class="container text-center">
         <div class="row">
@@ -85,8 +85,8 @@
             <h5 class="fw-bold">BICICLETAS</h5>
             <p>
               Especialistas en la venta de bicicletas de alta calidad para todos
-              los estilos y necesidades. Encuentra la tuya y comienza a rodar con
-              seguridad y estilo.
+              los estilos y necesidades. Encuentra la tuya y comienza a rodar
+              con seguridad y estilo.
             </p>
           </div>
           <div class="col-md-4">
@@ -105,45 +105,51 @@
                 style="width: 150px;"
               >
                 <a
-                  href="#"
+                  href="/"
                   class="text-info d-flex justify-content-center align-items-center"
                   style="width: 50px; height: 50px;"
                 >
+                  <!-- facebook -->
                   <i class="bi bi-facebook bi-xl"></i>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   class="text-info d-flex justify-content-center align-items-center"
                   style="width: 50px; height: 50px;"
                 >
+                  <!-- instagram -->
                   <i class="bi bi-instagram bi-xl"></i>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   class="text-info d-flex justify-content-center align-items-center"
                   style="width: 50px; height: 50px;"
                 >
+                  <!-- twitter -->
                   <i class="bi bi-twitter bi-xl"></i>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   class="text-info d-flex justify-content-center align-items-center"
                   style="width: 50px; height: 50px;"
                 >
+                  <!-- youtube -->
                   <i class="bi bi-youtube bi-xl"></i>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   class="text-info d-flex justify-content-center align-items-center"
                   style="width: 50px; height: 50px;"
                 >
+                  <!-- tiktok -->
                   <i class="bi bi-tiktok bi-xl"></i>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   class="text-info d-flex justify-content-center align-items-center"
                   style="width: 50px; height: 50px;"
                 >
+                  <!-- linkedin -->
                   <i class="bi bi-linkedin bi-xl"></i>
                 </a>
               </div>
