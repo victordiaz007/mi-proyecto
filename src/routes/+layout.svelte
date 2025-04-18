@@ -1,4 +1,3 @@
-<!-- src/routes/+layout.svelte -->
 <script lang="ts">
   import { onMount } from "svelte";
   import { auth } from "$lib/firebase";
@@ -6,7 +5,6 @@
   import { page } from "$app/stores";
   import { onAuthStateChanged } from "firebase/auth";
 
-  // Importar el JavaScript de Bootstrap
   onMount(() => {
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
   });
@@ -21,7 +19,7 @@
       loading = false;
 
       if (currentUser) {
-        isAdmin = currentUser.email === "admin@example.com"; // Cambia esto por tu email de admin
+        isAdmin = currentUser.email === "admin@example.com"; 
       } else {
         isAdmin = false;
       }
@@ -42,13 +40,23 @@
 </script>
 
 <svelte:head>
-  <!-- Importar los estilos de Bootstrap -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   />
+  <!-- AlertifyJS CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"
+  />
+  <!-- AlertifyJS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 </svelte:head>
 
 {#if loading}

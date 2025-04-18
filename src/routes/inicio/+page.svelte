@@ -16,7 +16,7 @@
 
   <div class="row mt-4">
     <div class="col-md-4">
-      <i class="bi bi-tree-fill bi-3x"></i>
+      <i class="bi bi-mountain bi-3x"></i>
       <h3>Bicicletas de Montaña</h3>
       <p>
         Explora terrenos difíciles con nuestras resistentes bicicletas de
@@ -29,14 +29,14 @@
       <p>Velocidad y rendimiento para los amantes del asfalto.</p>
     </div>
     <div class="col-md-4">
-      <i class="bi bi-people-fill bi-3x"></i>
+      <i class="bi bi-person bi-3x"></i>
       <h3>Bicicletas Infantiles</h3>
       <p>Seguras y divertidas para los más pequeños.</p>
     </div>
   </div>
 
   <div class="mt-5">
-    <h2><i class="bi bi-clipboard-check-fill"></i> Testimonios de Clientes</h2>
+    <h2><i class="bi bi-people"></i> Testimonios de Clientes</h2>
     <p>Lo que dicen nuestros clientes sobre nosotros.</p>
     <blockquote>
       "¡La mejor tienda de bicicletas! Gran variedad y excelente servicio." –
@@ -50,130 +50,145 @@
 
   <div class="mt-5">
     <h2><i class="bi bi-question-circle"></i> Preguntas Frecuentes</h2>
-    <div class="accordion" id="faqAccordion">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq1">
-          <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse1"
-            aria-expanded="true"
-            aria-controls="collapse1"
-          >
-            ¿Ofrecen envíos a domicilio?
-          </button>
-        </h2>
-        <div
-          id="collapse1"
-          class="accordion-collapse collapse show"
-          aria-labelledby="faq1"
-          data-bs-parent="#faqAccordion"
-        >
-          <div class="accordion-body">
-            Sí, realizamos envíos a todo el país con tiempos de entrega rápidos
-            y seguros.
+    <div class="row">
+     
+      <div class="col-md-6">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq1">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse1"
+                aria-expanded="true"
+                aria-controls="collapse1"
+              >
+                ¿Ofrecen envíos a domicilio?
+              </button>
+            </h2>
+            <div
+              id="collapse1"
+              class="accordion-collapse collapse show"
+              aria-labelledby="faq1"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Sí, realizamos envíos a todo el país con tiempos de entrega
+                rápidos y seguros.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq2">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse2"
+                aria-expanded="false"
+                aria-controls="collapse2"
+              >
+                ¿Tienen servicio de mantenimiento?
+              </button>
+            </h2>
+            <div
+              id="collapse2"
+              class="accordion-collapse collapse"
+              aria-labelledby="faq2"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Sí, ofrecemos mantenimiento preventivo y correctivo para todo
+                tipo de bicicletas.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq3">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse3"
+                aria-expanded="false"
+                aria-controls="collapse3"
+              >
+                ¿Aceptan pagos con tarjeta de crédito?
+              </button>
+            </h2>
+            <div
+              id="collapse3"
+              class="accordion-collapse collapse"
+              aria-labelledby="faq3"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Sí, aceptamos todas las tarjetas de crédito y débito, así como
+                pagos electrónicos.
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq2">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse2"
-            aria-expanded="false"
-            aria-controls="collapse2"
-          >
-            ¿Tienen servicio de mantenimiento?
-          </button>
-        </h2>
+
+      <!-- Carrusel de imágenes -->
+      <div class="col-md-6">
         <div
-          id="collapse2"
-          class="accordion-collapse collapse"
-          aria-labelledby="faq2"
-          data-bs-parent="#faqAccordion"
+          id="faqCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
         >
-          <div class="accordion-body">
-            Sí, ofrecemos mantenimiento preventivo y correctivo para todo tipo
-            de bicicletas.
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="/imagen1.jpg"
+                class="d-block w-100"
+                alt="Envío de bicicletas"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Envíos rápidos y seguros</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/imagen2.jpg"
+                class="d-block w-100"
+                alt="Mantenimiento de bicicletas"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Servicio de mantenimiento profesional</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/imagen3.jpg"
+                class="d-block w-100"
+                alt="Pago con tarjeta"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Pagos seguros con tarjeta y transferencias</h5>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq3">
           <button
-            class="accordion-button collapsed"
+            class="carousel-control-prev"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse3"
-            aria-expanded="false"
-            aria-controls="collapse3"
+            data-bs-target="#faqCarousel"
+            data-bs-slide="prev"
           >
-            ¿Aceptan pagos con tarjeta de crédito?
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
           </button>
-        </h2>
-        <div
-          id="collapse3"
-          class="accordion-collapse collapse"
-          aria-labelledby="faq3"
-          data-bs-parent="#faqAccordion"
-        >
-          <div class="accordion-body">
-            Sí, aceptamos todas las tarjetas de crédito y débito, así como pagos
-            electrónicos.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq4">
           <button
-            class="accordion-button collapsed"
+            class="carousel-control-next"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse4"
-            aria-expanded="false"
-            aria-controls="collapse4"
+            data-bs-target="#faqCarousel"
+            data-bs-slide="next"
           >
-            ¿Puedo probar una bicicleta antes de comprarla?
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
           </button>
-        </h2>
-        <div
-          id="collapse4"
-          class="accordion-collapse collapse"
-          aria-labelledby="faq4"
-          data-bs-parent="#faqAccordion"
-        >
-          <div class="accordion-body">
-            Sí, contamos con un área de pruebas para que puedas experimentar
-            antes de decidirte.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq5">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse5"
-            aria-expanded="false"
-            aria-controls="collapse5"
-          >
-            ¿Tienen repuestos y accesorios?
-          </button>
-        </h2>
-        <div
-          id="collapse5"
-          class="accordion-collapse collapse"
-          aria-labelledby="faq5"
-          data-bs-parent="#faqAccordion"
-        >
-          <div class="accordion-body">
-            Sí, contamos con una amplia gama de repuestos y accesorios para
-            bicicletas de todas las marcas.
-          </div>
         </div>
       </div>
     </div>
@@ -213,6 +228,12 @@
     max-width: 33.333%;
     padding: 0 15px;
     margin-bottom: 1rem;
+  }
+
+  :global(.col-md-6) {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
   }
 
   :global(.mt-5) {
@@ -267,22 +288,48 @@
   }
 
   :global(.accordion-button) {
-    background-color: #4a90e2 !important; /* Verde prominente */
-    color: #ffffff !important; /* Texto blanco para legibilidad */
+    background-color: #32d275 !important;
+    color: #ffffff !important;
     font-weight: 500;
   }
 
   :global(.accordion-button:not(.collapsed)) {
-    background-color: #2393a6 !important; /* Verde más oscuro cuando está expandido */
+    background-color: #28b062 !important;
     color: #ffffff !important;
   }
 
   :global(.accordion-button:focus) {
-    box-shadow: 0 0 0 0.25rem rgba(50, 210, 117, 0.25) !important; /* Sombra al enfocar */
+    box-shadow: 0 0 0 0.25rem rgba(50, 210, 117, 0.25) !important;
   }
 
   :global(.accordion-body) {
     color: #333;
-    background-color: #f8f9fa; /* Fondo claro para el contenido */
+    background-color: #f8f9fa;
+  }
+
+  /* Estilos del carrusel */
+  :global(.carousel-item img) {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  :global(.carousel-caption) {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+
+  :global(.carousel-caption h5) {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  :global(.carousel-control-prev-icon),
+  :global(.carousel-control-next-icon) {
+    background-color: #4a90e2;
+    border-radius: 50%;
+    padding: 10px;
   }
 </style>
