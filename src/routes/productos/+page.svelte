@@ -11,7 +11,7 @@
     {
       id: 2,
       name: "Bicicleta Bmx",
-      description: "Perfecta Si te gusta saltar rampas, hacer giros, manuals, grinds en barandillas o jugar con el equilibrio, la BMX es ideal.",
+      description: "Perfecta si te gusta saltar rampas, hacer giros,la BMX es ideal.",
       price: "$110,000",
       date: "24/04/2025",
       image:
