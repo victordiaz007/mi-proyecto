@@ -3,6 +3,13 @@
 
 <svelte:head>
   <title>BiciKingV | Inicio</title>
+  <!-- Bootstrap CSS vía CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-…"
+    crossorigin="anonymous"
+  />
 </svelte:head>
 
 <div class="container my-3 text-center">
@@ -15,44 +22,51 @@
   </p>
 
   <div class="row mt-4">
-    <div class="col-md-4">
-      <i class="bi bi-mountain bi-3x"></i>
-      <h3>Bicicletas de Montaña</h3>
+    <div class="col-12 col-md-4 mb-4">
+      <i class="bi bi-mountain bi-3x" style="color: #4a90e2;"></i>
+      <h3 style="color: #1a3c5e;">Bicicletas de Montaña</h3>
       <p>
         Explora terrenos difíciles con nuestras resistentes bicicletas de
         montaña.
       </p>
     </div>
-    <div class="col-md-4">
-      <i class="bi bi-signpost bi-3x"></i>
-      <h3>Bicicletas de Ruta</h3>
+    <div class="col-12 col-md-4 mb-4">
+      <i class="bi bi-signpost bi-3x" style="color: #4a90e2;"></i>
+      <h3 style="color: #1a3c5e;">Bicicletas de Ruta</h3>
       <p>Velocidad y rendimiento para los amantes del asfalto.</p>
     </div>
-    <div class="col-md-4">
-      <i class="bi bi-person bi-3x"></i>
-      <h3>Bicicletas Infantiles</h3>
+    <div class="col-12 col-md-4 mb-4">
+      <i class="bi bi-person bi-3x" style="color: #4a90e2;"></i>
+      <h3 style="color: #1a3c5e;">Bicicletas Infantiles</h3>
       <p>Seguras y divertidas para los más pequeños.</p>
     </div>
   </div>
 
   <div class="mt-5">
-    <h2><i class="bi bi-people"></i> Testimonios de Clientes</h2>
+    <h2>
+      <i class="bi bi-people" style="color: #4a90e2;"></i> Testimonios de Clientes
+    </h2>
     <p>Lo que dicen nuestros clientes sobre nosotros.</p>
-    <blockquote>
+    <blockquote
+      style="font-style: italic; color: #555; border-left: 4px solid #4a90e2; padding: 0.5rem 1rem;"
+    >
       "¡La mejor tienda de bicicletas! Gran variedad y excelente servicio." –
       Juan P.
     </blockquote>
-    <blockquote>
+    <blockquote
+      style="font-style: italic; color: #555; border-left: 4px solid #4a90e2; padding: 0.5rem 1rem;"
+    >
       "Encontré la bicicleta perfecta para mi hijo. ¡Muy recomendada!" – María
       G.
     </blockquote>
   </div>
 
   <div class="mt-5">
-    <h2><i class="bi bi-question-circle"></i> Preguntas Frecuentes</h2>
+    <h2>
+      <i class="bi bi-question-circle" style="color: #4a90e2;"></i> Preguntas Frecuentes
+    </h2>
     <div class="row">
-     
-      <div class="col-md-6">
+      <div class="col-12 col-md-6">
         <div class="accordion" id="faqAccordion">
           <div class="accordion-item">
             <h2 class="accordion-header" id="faq1">
@@ -63,6 +77,7 @@
                 data-bs-target="#collapse1"
                 aria-expanded="true"
                 aria-controls="collapse1"
+                style="background-color: #32d275; color: white; font-weight: 500;"
               >
                 ¿Ofrecen envíos a domicilio?
               </button>
@@ -73,7 +88,10 @@
               aria-labelledby="faq1"
               data-bs-parent="#faqAccordion"
             >
-              <div class="accordion-body">
+              <div
+                class="accordion-body"
+                style="color: #333; background-color: #f8f9fa;"
+              >
                 Sí, realizamos envíos a todo el país con tiempos de entrega
                 rápidos y seguros.
               </div>
@@ -88,6 +106,7 @@
                 data-bs-target="#collapse2"
                 aria-expanded="false"
                 aria-controls="collapse2"
+                style="background-color: #32d275; color: white; font-weight: 500;"
               >
                 ¿Tienen servicio de mantenimiento?
               </button>
@@ -98,7 +117,10 @@
               aria-labelledby="faq2"
               data-bs-parent="#faqAccordion"
             >
-              <div class="accordion-body">
+              <div
+                class="accordion-body"
+                style="color: #333; background-color: #f8f9fa;"
+              >
                 Sí, ofrecemos mantenimiento preventivo y correctivo para todo
                 tipo de bicicletas.
               </div>
@@ -113,6 +135,7 @@
                 data-bs-target="#collapse3"
                 aria-expanded="false"
                 aria-controls="collapse3"
+                style="background-color: #32d275; color: white; font-weight: 500;"
               >
                 ¿Aceptan pagos con tarjeta de crédito?
               </button>
@@ -123,7 +146,10 @@
               aria-labelledby="faq3"
               data-bs-parent="#faqAccordion"
             >
-              <div class="accordion-body">
+              <div
+                class="accordion-body"
+                style="color: #333; background-color: #f8f9fa;"
+              >
                 Sí, aceptamos todas las tarjetas de crédito y débito, así como
                 pagos electrónicos.
               </div>
@@ -133,21 +159,21 @@
       </div>
 
       <!-- Carrusel de imágenes -->
-      <div class="col-md-6">
-        <div
-          id="faqCarousel"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
+      <div class="col-12 col-md-6">
+        <div id="faqCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
                 src="/imagen1.jpg"
                 class="d-block w-100"
                 alt="Envío de bicicletas"
+                style="height: 300px; object-fit: cover; border-radius: 8px;"
               />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Envíos rápidos y seguros</h5>
+              <div
+                class="carousel-caption d-none d-md-block"
+                style="background: rgba(0, 0, 0, 0.5); padding: 5px 10px;"
+              >
+                <h5 style="color: #ffffff;">Envíos rápidos y seguros</h5>
               </div>
             </div>
             <div class="carousel-item">
@@ -155,9 +181,15 @@
                 src="/imagen2.jpg"
                 class="d-block w-100"
                 alt="Mantenimiento de bicicletas"
+                style="height: 300px; object-fit: cover; border-radius: 8px;"
               />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Servicio de mantenimiento profesional</h5>
+              <div
+                class="carousel-caption d-none d-md-block"
+                style="background: rgba(0, 0, 0, 0.5); padding: 5px 10px;"
+              >
+                <h5 style="color: #ffffff;">
+                  Servicio de mantenimiento profesional
+                </h5>
               </div>
             </div>
             <div class="carousel-item">
@@ -165,9 +197,15 @@
                 src="/imagen3.jpg"
                 class="d-block w-100"
                 alt="Pago con tarjeta"
+                style="height: 300px; object-fit: cover; border-radius: 8px;"
               />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Pagos seguros con tarjeta y transferencias</h5>
+              <div
+                class="carousel-caption d-none d-md-block"
+                style="background: rgba(0, 0, 0, 0.5); padding: 5px 10px;"
+              >
+                <h5 style="color: #ffffff;">
+                  Pagos seguros con tarjeta y transferencias
+                </h5>
               </div>
             </div>
           </div>
@@ -177,7 +215,11 @@
             data-bs-target="#faqCarousel"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span
+              class="carousel-control-prev-icon"
+              aria-hidden="true"
+              style="background-color: #4a90e2;"
+            ></span>
             <span class="visually-hidden">Previous</span>
           </button>
           <button
@@ -186,7 +228,11 @@
             data-bs-target="#faqCarousel"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span
+              class="carousel-control-next-icon"
+              aria-hidden="true"
+              style="background-color: #4a90e2;"
+            ></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>

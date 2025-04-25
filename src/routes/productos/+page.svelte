@@ -10,12 +10,11 @@
     },
     {
       id: 2,
-      name: "Bicicleta Bmx",
-      description: "Perfecta si te gusta saltar rampas, hacer giros,la BMX es ideal.",
+      name: "Bicicleta BMX",
+      description: "Perfecta si te gusta saltar rampas, hacer giros.",
       price: "$110,000",
       date: "24/04/2025",
-      image:
-        "/bicicleta-bmx.jpg",
+      image: "/bicicleta-bmx.jpg",
     },
     {
       id: 3,
@@ -28,18 +27,16 @@
     },
   ];
 
-  // Función para mostrar notificaciones con reintentos
   function showNotification(message: string, retries = 5, interval = 500) {
     if (typeof alertify !== "undefined") {
       alertify.set("notifier", "position", "top-right");
       alertify.success(message);
     } else if (retries > 0) {
-      // Reintentar después de un intervalo
-      setTimeout(() => {
-        showNotification(message, retries - 1, interval);
-      }, interval);
+      setTimeout(
+        () => showNotification(message, retries - 1, interval),
+        interval,
+      );
     } else {
-      // Fallback a alert nativo si no se carga alertify
       alert(message);
     }
   }
@@ -48,7 +45,6 @@
     showNotification(`${producto.name} ha sido añadido al carrito.`);
   }
 
-  // Manejar la apertura del modal
   let selectedImage = "";
   function openImageModal(image: string) {
     selectedImage = image;
@@ -56,32 +52,42 @@
 </script>
 
 <svelte:head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BiciKingV | Productos</title>
+  <!-- Bootstrap CSS vía CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-…"
+    crossorigin="anonymous"
+  />
 </svelte:head>
 
-<main class="container">
-  <h1 class="text-center my-4">
+<main class="container my-5">
+  <h1 class="text-center mb-4">
     <i class="bi bi-bicycle"></i> Nuestra Tienda
   </h1>
+
   <div class="row justify-content-center">
     {#each productos as producto}
-      <div class="col-md-4 col-sm-6 mb-4">
-        <div class="card shadow-sm border-0">
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
           <img
             src={producto.image}
             alt={producto.name}
-            class="card-img-top"
+            class="card-img-top img-fluid"
             style="cursor: pointer;"
             on:click={() => openImageModal(producto.image)}
             data-bs-toggle="modal"
             data-bs-target="#imageModal"
           />
-          <div class="card-body text-center">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">{producto.name}</h5>
-            <p class="card-text">{producto.description}</p>
+            <p class="card-text flex-grow-1">{producto.description}</p>
             <p class="fw-bold text-success">{producto.price}</p>
             <button
-              class="btn btn-primary"
+              class="btn btn-primary mt-2"
               on:click={() => addToCart(producto)}
             >
               <i class="bi bi-cart-plus"></i> Añadir al carrito
@@ -95,7 +101,7 @@
     {/each}
   </div>
 
-  <!-- Modal para mostrar la imagen en tamaño completo -->
+  <!-- Modal -->
   <div
     class="modal fade"
     id="imageModal"
@@ -103,15 +109,15 @@
     aria-labelledby="imageModalLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="imageModalLabel">Vista previa de la imagen</h5>
+          <h5 class="modal-title" id="imageModalLabel">Vista previa</h5>
           <button
             type="button"
             class="btn-close"
             data-bs-dismiss="modal"
-            aria-label="Close"
+            aria-label="Cerrar"
           ></button>
         </div>
         <div class="modal-body text-center">
@@ -120,7 +126,6 @@
               src={selectedImage}
               alt="Imagen del producto"
               class="img-fluid"
-              style="max-height: 500px; object-fit: contain;"
             />
           {/if}
         </div>
@@ -138,140 +143,8 @@
   </div>
 </main>
 
-<style>
-  main {
-    min-height: calc(100vh - 300px);
-    padding-bottom: 3rem;
-  }
-
-  :global(.container) {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-  :global(.text-center) {
-    text-align: center;
-  }
-
-  :global(.my-4) {
-    margin-top: 1.5rem !important;
-    margin-bottom: 1.5rem !important;
-  }
-
-  :global(.row) {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-  }
-
-  :global(.justify-content-center) {
-    justify-content: center;
-  }
-
-  :global(.col-md-4) {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-    padding: 0 15px;
-  }
-
-  :global(.col-sm-6) {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 0 15px;
-  }
-
-  :global(.mb-4) {
-    margin-bottom: 1.5rem !important;
-  }
-
-  :global(.card) {
-    transition: transform 0.3s ease-in-out;
-    border-radius: 8px;
-  }
-
-  :global(.card:hover) {
-    transform: scale(1.05);
-  }
-
-  :global(.card-img-top) {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    background-color: #f8f9fa;
-  }
-
-  :global(.card-body) {
-    padding: 1.25rem;
-  }
-
-  :global(.card-title) {
-    color: #1a3c5e;
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-  }
-
-  :global(.card-text) {
-    color: #333;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-
-  :global(.fw-bold) {
-    font-weight: 700 !important;
-  }
-
-  :global(.text-success) {
-    color: #28b062 !important;
-  }
-
-  :global(.btn-primary) {
-    background-color: #4a90e2;
-    border-color: #4a90e2;
-    color: #ffffff;
-    font-weight: 500;
-  }
-
-  :global(.btn-primary:hover) {
-    background-color: #1a3c5e;
-    border-color: #1a3c5e;
-  }
-
-  :global(.card-footer) {
-    background-color: #f8f9fa;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    padding: 0.75rem;
-    font-size: 0.85rem;
-  }
-
-  :global(.text-muted) {
-    color: #6c757d !important;
-  }
-
-  :global(.modal-title) {
-    color: #1a3c5e;
-  }
-
-  :global(.btn-secondary) {
-    background-color: #6c757d;
-    border-color: #6c757d;
-  }
-
-  :global(.btn-secondary:hover) {
-    background-color: #5a6268;
-    border-color: #5a6268;
-  }
-
-  h1 {
-    color: #1a3c5e;
-    font-size: 2.5rem;
-  }
-
-  h1 i {
-    color: #4a90e2;
-    margin-right: 0.5rem;
-  }
-</style>
+<!--
+  NOTA: Ya no hay <style> que sobreescriba el grid de Bootstrap.
+  Asegúrate de incluir también el bundle de JS de Bootstrap en tu layout principal:
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+-->

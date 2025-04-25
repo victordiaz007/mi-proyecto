@@ -1,114 +1,69 @@
-<!-- src/routes/quienes-somos/+page.svelte -->
 <script lang="ts">
 </script>
 
 <svelte:head>
-  <title>BiciKingV | Quienes Somos</title>
+  <title>BiciKingV | Quiénes Somos</title>
 </svelte:head>
 
 <main class="container my-5">
-  <h1 class="text-center mb-4">Sobre Nosotros</h1>
+  <h1 class="text-center mb-4">Quiénes Somos</h1>
   <p class="text-center lead">
-    Bienvenido a BiciKingV, donde la pasión por el ciclismo nos impulsa a
-    ofrecer los mejores productos y servicios.
+    En <strong>BiciKingV</strong>, vivimos el ciclismo con pasión. Nuestro
+    compromiso es ofrecer productos de calidad y un servicio que te inspire a
+    rodar más lejos cada día.
   </p>
 
   <section class="row mt-5">
-    <div class="col-md-6">
+    <div class="col-12 col-md-6 mb-4">
       <div class="CardSelected p-4 border border-black rounded">
         <h2><i class="bi bi-bicycle"></i> Nuestra Historia</h2>
         <p>
-          Desde nuestros inicios, nos hemos dedicado a proporcionar bicicletas
-          de alta calidad para ciclistas de todos los niveles. Nos
-          enorgullecemos de nuestra atención al detalle y nuestra pasión por el
-          ciclismo.
+          Fundados por ciclistas y para ciclistas, nacimos con la visión de ser
+          un punto de encuentro para los amantes de las dos ruedas. Desde
+          entonces, hemos crecido junto a nuestra comunidad, ofreciendo siempre
+          lo mejor en bicicletas, accesorios y experiencia.
         </p>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-12 col-md-6 mb-4">
       <div class="CardSelected p-4 border border-black rounded">
-        <h2><i class="bi bi-people"></i> Nuestra Misión</h2>
+        <h2><i class="bi bi-bullseye"></i> Nuestra Misión</h2>
         <p>
-          Queremos fomentar el amor por el ciclismo y ofrecer productos que
-          mejoren la experiencia de nuestros clientes, promoviendo un estilo de
-          vida activo y sostenible.
+          Promover un estilo de vida saludable, ecológico y activo a través del
+          ciclismo, brindando atención personalizada y productos que se adaptan
+          a cada necesidad.
         </p>
       </div>
     </div>
   </section>
 
   <section class="row mt-5">
-    <div class="col-md-6">
+    <div class="col-12 col-md-6 mb-4">
       <div class="CardSelected p-4 border border-black rounded">
-        <h2><i class="bi bi-tools"></i> Servicios</h2>
+        <h2><i class="bi bi-stars"></i> Nuestros Valores</h2>
         <ul>
-          <li>Venta de bicicletas y accesorios</li>
-          <li>Mantenimiento y reparación</li>
-          <li>Asesoramiento personalizado</li>
+          <li>Pasión por el ciclismo</li>
+          <li>Atención cercana y personalizada</li>
+          <li>Calidad en cada detalle</li>
+          <li>Compromiso con la sostenibilidad</li>
         </ul>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-12 col-md-6 mb-4">
       <div class="CardSelected p-4 border border-black rounded">
-        <h2><i class="bi bi-question-circle"></i> ¿Por qué elegirnos?</h2>
+        <h2><i class="bi bi-people-fill"></i> Nuestro Equipo</h2>
         <p>
-          Ofrecemos calidad, experiencia y un servicio al cliente excepcional.
-          Nuestro equipo está aquí para ayudarte a encontrar la bicicleta
-          perfecta para ti.
+          Somos un equipo diverso unido por una misma meta: ayudarte a disfrutar
+          del camino. Cada miembro aporta conocimiento, experiencia y una
+          sonrisa para que tu experiencia sea inolvidable.
         </p>
       </div>
     </div>
   </section>
 </main>
 
+<!-- No necesitas agregar reglas CSS personalizadas, ya que Bootstrap maneja la responsividad automáticamente. -->
 <style>
-  main {
-    min-height: calc(100vh - 300px);
-    padding-bottom: 3rem;
-  }
-
-  :global(.container) {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-  :global(.my-5) {
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
-  }
-
-  :global(.text-center) {
-    text-align: center;
-  }
-
-  :global(.mb-4) {
-    margin-bottom: 1.5rem !important;
-  }
-
-  :global(.lead) {
-    font-size: 1.25rem;
-    font-weight: 300;
-    color: #333;
-  }
-
-  :global(.row) {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-  }
-
-  :global(.mt-5) {
-    margin-top: 3rem !important;
-  }
-
-  :global(.col-md-6) {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 0 15px;
-    margin-bottom: 1rem;
-  }
-
   h1 {
     color: #1a3c5e;
   }
